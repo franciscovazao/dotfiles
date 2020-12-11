@@ -41,8 +41,8 @@ Configuring i3-gaps
     
     #Building from source
         # clone the repository
-        $git clone https://www.github.com/Airblader/i3 i3-gaps
-        $cd i3-gaps
+        $ git clone https://www.github.com/Airblader/i3 i3-gaps
+        $ cd i3-gaps
 
     # compile & install
         $ mkdir -p build && cd build
