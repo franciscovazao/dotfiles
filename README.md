@@ -48,7 +48,7 @@ Configuring i3-gaps
         $ mkdir -p build && cd build
         $ meson ..
         $ ninja
-        $ meson install
+        $ sudo meson install
 
 
 
