@@ -27,17 +27,17 @@ Configuring flatpak and yay
 
 Most important packages
 
-    $ sudo apt install i3 i3status dmenu i3lock xorg-xbacklight feh picom j4-dmenu-desktop network-manager-gnome
+    $ sudo apt install i3 i3status dmenu i3lock feh j4-dmenu-desktop network-manager-gnome
 
 Other packages
 
-    $ sudo apt install thunar evince flatpak tlp timeshift vim xfce4-terminal lxsession lxappearance ttf-font-awesome
+    $ sudo apt install thunar evince flatpak tlp timeshift vim xfce4-terminal lxsession lxappearance fonts-font-awesome
 
 Configuring i3-gaps
     
     #Dependencies
 
-        $ apt install dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 libxcb-shape0-dev meson
+        $ sudo apt install dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 libxcb-shape0-dev meson
     
     #Building from source
         # clone the repository
