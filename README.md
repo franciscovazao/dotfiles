@@ -27,7 +27,7 @@ Configuring flatpak and yay
 
 Most important packages
 
-    $ sudo apt install i3 i3status dmenu i3lock feh j4-dmenu-desktop network-manager-gnome
+    $ sudo apt install i3 i3status dmenu i3lock feh j4-dmenu-desktop network-manager-gnome commpton 
 
 Other packages
 
