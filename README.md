@@ -10,7 +10,7 @@ Most important packages
 
 Other packages
 
-    $ sudo pacman -S brave thunar evince flatpak tlp timeshift bitwarden code timeshift vim lxsession lxappearance redshift blueman dunst
+    $ sudo pacman -S brave thunar evince flatpak tlp timeshift bitwarden code timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter
 
 Configuring yay
 
@@ -30,7 +30,7 @@ Most important packages
 
 Other packages
 
-    $ sudo apt install thunar evince flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst
+    $ sudo apt install thunar evince flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter
 
 Configuring i3-gaps
     
@@ -58,7 +58,7 @@ Most important packages
 
 Other packages
 
-    $ sudo dnf install thunar evince flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst
+    $ sudo dnf install thunar evince flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter
 
 Configuring i3-gaps
     
@@ -77,6 +77,13 @@ Configuring i3-gaps
         $ ninja
         $ sudo meson install
 
+Enabling RPM Fusion
+    
+    #Free repo
+        $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm   
+    
+    #Non-free repo
+        $ sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # Flatpak configuration
 
