@@ -6,11 +6,11 @@ Here I list the requirements to use this i3 config.
 
 Most important packages
 
-    $ sudo pacman -S i3 i3status dmenu i3lock xorg-xbacklight feh picom j4-dmenu-desktop
+    $ sudo pacman -S i3 i3status dmenu i3lock xorg-xbacklight feh picom j4-dmenu-desktop ttf-font-awesome xfce4-terminal
 
 Other packages
 
-    $ sudo pacman -S brave thunar evince flatpak tlp timeshift bitwarden code timeshift vim xfce4-terminal lxsession lxappearance ttf-font-awesome redshift blueman dunst
+    $ sudo pacman -S brave thunar evince flatpak tlp timeshift bitwarden code timeshift vim lxsession lxappearance redshift blueman dunst
 
 Configuring yay
 
@@ -26,11 +26,11 @@ Configuring yay
 
 Most important packages
 
-    $ sudo apt install i3 i3status dmenu i3lock feh j4-dmenu-desktop network-manager-gnome compton 
+    $ sudo apt install i3 i3status dmenu i3lock feh j4-dmenu-desktop network-manager-gnome compton fonts-font-awesome xfce4-terminal
 
 Other packages
 
-    $ sudo apt install thunar evince flatpak tlp timeshift vim xfce4-terminal lxsession lxappearance fonts-font-awesome redshift blueman dunst
+    $ sudo apt install thunar evince flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst
 
 Configuring i3-gaps
     
@@ -54,11 +54,11 @@ Configuring i3-gaps
 
 Most important packages
 
-    $ sudo dnf install i3 i3status dmenu i3lock feh network-manager-applet picom 
+    $ sudo dnf install i3 i3status dmenu i3lock feh network-manager-applet picom fontawesome-fonts xfce4-terminal
 
 Other packages
 
-    $ sudo dnf install thunar evince flatpak tlp timeshift vim xfce4-terminal lxsession lxappearance font-awesome-fonts redshift blueman dunst
+    $ sudo dnf install thunar evince flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst
 
 Configuring i3-gaps
     
