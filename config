@@ -54,7 +54,8 @@ bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#FA8385' -sb
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+Shift+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#191919' -nf '#FA8385' -sb '#db2f2f' -sf '#191919' -fn 'NotoMonoSans:bold:pixelsize=14'"
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
