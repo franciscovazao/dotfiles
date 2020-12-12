@@ -6,7 +6,7 @@ Here I list the requirements to use this i3 config.
 
 Most important packages
 
-    $ sudo pacman -S i3 i3status dmenu i3lock xorg-xbacklight feh picom j4-dmenu-desktop ttf-font-awesome xfce4-terminal
+    $ sudo pacman -S i3-gaps i3status dmenu i3lock xorg-xbacklight feh picom j4-dmenu-desktop ttf-font-awesome xfce4-terminal
 
 Other packages
 
@@ -35,7 +35,6 @@ Other packages
 Configuring i3-gaps
     
     #Dependencies
-
         $ sudo apt install dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 libxcb-shape0-dev meson
     
     #Building from source
