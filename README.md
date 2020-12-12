@@ -12,9 +12,8 @@ Other packages
 
     $ sudo pacman -S brave thunar evince flatpak tlp timeshift bitwarden code timeshift vim xfce4-terminal lxsession lxappearance ttf-font-awesome redshift blueman dunst
 
-Configuring flatpak and yay
+Configuring yay
 
-    $ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     $ sudo pacman -S --needed git base-devel
     $ cd /opt
     $ git clone https://aur.archlinux.org/yay.git
@@ -51,4 +50,43 @@ Configuring i3-gaps
         $ sudo meson install
 
 
+# Fedora configuration
 
+Most important packages
+
+    $ sudo dnf install i3 i3status dmenu i3lock feh network-manager-applet picom 
+
+Other packages
+
+    $ sudo dnf install thunar evince flatpak tlp timeshift vim xfce4-terminal lxsession lxappearance font-awesome-fonts redshift blueman dunst
+
+Configuring i3-gaps
+    
+    #Dependencies
+
+        $ sudo dnf install libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel pcre-devel pango-devel git gcc automake meson perl-ExtUtils-MenuMaker
+
+    #Building from source
+        # clone the repository
+        $ git clone https://www.github.com/Airblader/i3 i3-gaps
+        $ cd i3-gaps
+
+    # compile & install
+        $ mkdir -p build && cd build
+        $ meson ..
+        $ ninja
+        $ sudo meson install
+
+
+# Flatpak configuration
+
+Adding Flathub
+
+    $ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# Dunst configuration
+    
+    
+    $ mkdir ~/.config/dunst
+    $ sudo cp ~/dotfiles/dunstrc ~/.config/dunst/dunstrc
+    $ sudo chown user:user ~/.config/dunst/dunstrc
