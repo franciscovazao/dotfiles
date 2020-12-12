@@ -69,7 +69,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #####################################################################################################################
 
 #Window style settings
-default_border pixel 2 
+default_border pixel 1 
 default_floating_border normal
 #hide_edge_borders pixel 
 
@@ -260,11 +260,14 @@ bar {
 #####################################################################################################################
 
 #Set background
-#exec --no-startup-id feh --randomize --bg-fill ~/.config/i3/Backgrounds/*
-exec --no-startup-id feh --bg-fill ~/.config/i3/Backgrounds/0TUWjyp.jpg
+#exec --no-startup-id feh --randomize --bg-fill ~/MEGA/Backgrounds/*
+exec --no-startup-id feh --bg-fill ~/MEGA/Backgrounds/0TUWjyp.jpg &
+
+#Night light 
+exec --no-startup-id redshift &
 
 #Set compositor
-exec --no-startup-id picom --config ~/.config/i3/picom.conf
+exec --no-startup-id picom --config ~/.config/i3/picom.conf &
 
 # Autotiling
 #exec_always --no-startup-id autotiling
@@ -407,7 +410,29 @@ assign [class="bitwarden-desktop|Bitwarden|bitwarden|Encryptr|encryptr|Pamac"]  
 # Workspace 10 Settings	
 assign [class="Lxappearance|lxappearance|Settings|Manjaro-settings|manjaro-settings-manager"]  → $ws10
 
+# Workspace 7 Media	
+assign [class="vlc"]  → $ws7
 
+######################################################################################################################
+##################                               Redshift Mode                                       #################
+######################################################################################################################
+
+# redshift modes
+bindsym $mod+Shift+s mode "$mode_redshift"
+set $mode_redshift Set colour temperature: (a)uto, (r)eset, (2)500K, (3)000K, (4)000K, (5)000K
+set $kill_redshift pkill -9 redshift;
+mode "$mode_redshift" {
+    bindsym a exec --no-startup-id "$kill_redshift redshift -P -t 5000:4000", mode "default"
+    bindsym r exec --no-startup-id "$kill_redshift redshift -x", mode "default"
+    bindsym 2 exec --no-startup-id "$kill_redshift redshift -P -O 2500", mode "default"
+    bindsym 3 exec --no-startup-id "$kill_redshift redshift -P -O 3000", mode "default"
+    bindsym 4 exec --no-startup-id "$kill_redshift redshift -P -O 4000", mode "default"
+    bindsym 5 exec --no-startup-id "$kill_redshift redshift -P -O 5000", mode "default"
+ 
+    # exit mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 ######################################################################################################################
 ##################                          mouse settings in i3                                     #################
