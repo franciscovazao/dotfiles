@@ -159,7 +159,7 @@ mode "resize" {
 set $ws1 "1:  "
 set $ws2 "2:  " 
 set $ws3 "3:  "
-set $ws4 "4:  "
+set $ws4 "4:  "
 set $ws5 "5:  "
 set $ws6 "6:  "
 set $ws7 "7:  "
@@ -247,7 +247,7 @@ bar {
     separator  #666666
 
     #colorclass            border  backgr. text
-    focused_workspace     #a9a9a9 #FA8385 #eeeeee
+    focused_workspace     #a9a9a9 #2F2F2F #eeeeee
     active_workspace      #a9a9a9 #FA8385 #eeeeee
     inactive_workspace    #a9a9a9 #222222 #a9a9a9
     urgent_workspace      #a9a9a9 #d42121 #FFFFFF

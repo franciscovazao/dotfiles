@@ -10,7 +10,7 @@ Most important packages
 
 Other packages
 
-    $ sudo pacman -S brave thunar evince flatpak tlp timeshift bitwarden code timeshift vim xfce4-terminal lxsession lxappearance ttf-font-awesome redshift blueman
+    $ sudo pacman -S brave thunar evince flatpak tlp timeshift bitwarden code timeshift vim xfce4-terminal lxsession lxappearance ttf-font-awesome redshift blueman dunst
 
 Configuring flatpak and yay
 
@@ -31,7 +31,7 @@ Most important packages
 
 Other packages
 
-    $ sudo apt install thunar evince flatpak tlp timeshift vim xfce4-terminal lxsession lxappearance fonts-font-awesome redshift blueman
+    $ sudo apt install thunar evince flatpak tlp timeshift vim xfce4-terminal lxsession lxappearance fonts-font-awesome redshift blueman dunst
 
 Configuring i3-gaps
     
