@@ -48,6 +48,11 @@ Configuring i3-gaps
         $ ninja
         $ sudo meson install
 
+Namespaces are disabled by default which doesn't allow to run snaps and appimages, to permanentely enable them:
+
+    $ echo 'kernel.unprivileged_userns_clone=1' > /etc/sysctl.d/00-local-userns.conf
+    $ service procps restart
+
 
 # Fedora configuration
 
