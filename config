@@ -23,7 +23,7 @@ font pango:DejaVu Mono Bold 12
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -54,7 +54,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#FA8385' -sb
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-#bindsym $mod+Shift+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#191919' -nf '#FA8385' -sb '#db2f2f' -sf '#191919' -fn 'NotoMonoSans:bold:pixelsize=14'"
+bindsym $mod+Shift+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#191919' -nf '#FA8385' -sb '#db2f2f' -sf '#191919' -fn 'NotoMonoSans:bold:pixelsize=14'"
 
 
 # reload the configuration file
@@ -73,6 +73,16 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 default_border pixel 1 
 default_floating_border normal
 #hide_edge_borders pixel 
+
+# Window color settings
+# class                 border  backgr. text    indicator
+client.focused          #db2f2f #db2f2f #e5e5e5 #d42121
+client.unfocused        #db2f2f #222222 #aaaaaa #222222
+client.focused_inactive #db2f2f #222222 #a9a9a9 #222222
+client.placeholder      #db2f2f #222222 #aaaaaa #222222
+client.urgent           #db2f2f #d42121 #f7f7f7 #d42121
+client.background       #242424
+
 
 # change focus
 bindsym $mod+h focus left
@@ -298,7 +308,7 @@ bindsym $mod+Shift+x exec lxsession-logout
 #bindsym $mod+F12 exec --no-startup-id rofi -show run -font "Noto Sans 14"
 #https://github.com/adi1090x/rofi
 #bindsym $mod+p exec --no-startup-id ~/.config/rofi/bin/menu_powermenu
-
+bindsym $mod+Shift+w exec i3lock-fancy 
 
 
 #####################################################################################################################
@@ -370,16 +380,6 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
-    # Window color settings
-    # class                 border  backgr. text    indicator
-    client.focused          #db2f2f #db2f2f #e5e5e5 #6790EB
-    client.unfocused        #db2f2f #222222 #aaaaaa #222222
-    client.focused_inactive #db2f2f #222222 #a9a9a9 #222222
-    client.placeholder      #db2f2f #222222 #aaaaaa #222222
-    client.urgent           #db2f2f #d42121 #f7f7f7 #d42121
-
-    client.background       #242424
 
 
 #####################################################################################################################
