@@ -35,7 +35,7 @@ Installing snap packages
 
 Switching branches in Manjaro
 
-    $ sudo pacman-mirrors --api --set-branch branch #replace branch with stable/testing/unstable
+    $ sudo pacman-mirrors --api --set-branch {branch} #replace {branch} with stable/testing/unstable
     $ sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu
 
 # Debian configuration
