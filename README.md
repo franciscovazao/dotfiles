@@ -2,25 +2,41 @@
 
 Here I list the requirements to use this i3 config.
 
-# Manjaro configuration
+# Arch/Manjaro configuration
 
 Most important packages
 
-    $ sudo pacman -S i3-gaps i3status dmenu i3lock xorg-xbacklight feh picom j4-dmenu-desktop ttf-font-awesome xfce4-terminal
+    $ sudo pacman -S i3-gaps i3status dmenu i3lock xorg-xbacklight feh picom  ttf-font-awesome xfce4-terminal 
 
 Other packages
 
-    $ sudo pacman -S brave thunar evince flatpak tlp timeshift bitwarden code timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter
+    $ sudo pacman -S thunar evince flatpak tlp timeshift bitwarden code timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter thunderbird snapd texlive-most
 
 Configuring yay
 
     $ sudo pacman -S --needed git base-devel
     $ cd /opt
     $ git clone https://aur.archlinux.org/yay.git
-    $ sudo chown -R user:user ./yay-git
-    $ cd yay-git
+    $ sudo chown -R user:user ./yay
+    $ cd yay
     $ makepkg -si
 
+Installing yay packages
+
+    $ yay -S j4-dmenu-desktop birdtray brave-bin
+
+Installing flatpak packages (see below to conidfigure flapak)
+    
+    $ flatpak install skype discord zoom	
+
+Installing snap packages
+
+    $ snap install electronplayer
+
+Switching branches in Manjaro
+
+    $ sudo pacman-mirrors --api --set-branch branch #replace branch with stable/testing/unstable
+    $ sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu
 
 # Debian configuration
 
