@@ -272,7 +272,7 @@ bar {
 
 #Set background
 #exec --no-startup-id feh --randomize --bg-fill ~/MEGA/Backgrounds/*
-exec --no-startup-id feh --bg-fill ~/MEGA/Backgrounds/0TUWjyp.jpg &
+exec --no-startup-id feh --bg-fill ~/.config/i3/Backgrounds/0TUWjyp.jpg &
 
 #Night light 
 exec --no-startup-id redshift &
