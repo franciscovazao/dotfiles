@@ -10,7 +10,11 @@ Most important packages
 
 Other packages
 
-    $ sudo pacman -S thunar evince flatpak tlp timeshift bitwarden code vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter thunderbird snapd texlive-most
+    $ sudo pacman -S thunar evince flatpak tlp code vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter thunderbird texlive-most
+
+Additional other packages (Manjaro only):
+
+    $ sudo pacman -S timeshift snapd bitwarden
 
 Configuring yay
 
@@ -24,10 +28,18 @@ Configuring yay
 Installing yay packages
 
     $ yay -S j4-dmenu-desktop birdtray brave-bin
+    
+Additional yay packages (Arch only):
+    
+    $ yay -S timeshift snapd 
 
 Installing flatpak packages (see below to conidfigure flapak)
     
-    $ flatpak install skype discord zoom	
+    $ flatpak install skype discord zoom 
+    
+Additional flatpak packages (Arch only):
+
+    $ flatpak install bitwarden
 
 Installing snap packages
 
@@ -110,9 +122,18 @@ Enabling RPM Fusion
 Adding Flathub
 
     $ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    
+# i3 configuration
+
+Add the directory .config/i3/ if it does not exist
+
+    $ cp -r ~/dotfiles/config ~/dotfiles/i3exit.sh ~/dotfiles/i3status.sh ~/dotfiles/picom.conf ~/dotfiles/Backgrounds/ ~/.config/i3
+    
+# Redshift configuration
+    
+    $ cp redshift.conf ~/.config/
 
 # Dunst configuration
-    
     
     $ mkdir ~/.config/dunst
     $ sudo cp ~/dotfiles/dunstrc ~/.config/dunst/dunstrc
