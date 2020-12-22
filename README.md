@@ -10,7 +10,7 @@ Most important packages
 
 Other packages
 
-    $ sudo pacman -S thunar evince flatpak tlp timeshift bitwarden code timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter thunderbird snapd texlive-most
+    $ sudo pacman -S thunar evince flatpak tlp timeshift bitwarden code vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter thunderbird snapd texlive-most
 
 Configuring yay
 
