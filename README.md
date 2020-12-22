@@ -10,7 +10,7 @@ Most important packages
 
 Other packages
 
-    $ sudo pacman -S thunar evince flatpak tlp code vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter thunderbird texlive-most
+    $ sudo pacman -S network-manager-applet thunar evince flatpak tlp code vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter thunderbird texlive-most
 
 Additional other packages (Manjaro only):
 
