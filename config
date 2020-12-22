@@ -7,9 +7,6 @@
 #Defining essential features 
 #One needs dmenu, feh, awesome fonts, nm-applet,
 
-#keyboard layout
-exec "setxkbmap -layout gb,pt -option 'grp:alt_shift_toggle'"
-
 #Set the super key, mod4 for win and mod1 for alt
 set $mod Mod4
 
@@ -37,8 +34,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 #Adjust creen brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease screen brightness
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -64,6 +61,8 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+#keyboard layout
+exec setxkbmap -layout gb,pt -option 'grp:alt_shift_toggle'
 
 #####################################################################################################################
 #################                                Window Management                                  #################
@@ -76,11 +75,11 @@ default_floating_border normal
 
 # Window color settings
 # class                 border  backgr. text    indicator
-client.focused          #db2f2f #db2f2f #e5e5e5 #d42121
-client.unfocused        #db2f2f #222222 #aaaaaa #222222
-client.focused_inactive #db2f2f #222222 #a9a9a9 #222222
-client.placeholder      #db2f2f #222222 #aaaaaa #222222
-client.urgent           #db2f2f #d42121 #f7f7f7 #d42121
+client.focused          #FF8787 #FF8787 #000000 #FF8787
+client.unfocused        #FF8787 #222222 #FFFFFF #222222
+client.focused_inactive #FF8787 #222222 #a9a9a9 #222222
+client.placeholder      #FF8787 #222222 #000000 #222222
+client.urgent           #FF8787 #FF8787 #f7f7f7 #FF8787
 client.background       #242424
 
 
@@ -275,7 +274,7 @@ bar {
 exec --no-startup-id feh --bg-fill ~/.config/i3/Backgrounds/0TUWjyp.jpg &
 
 #Night light 
-exec --no-startup-id redshift &
+exec --no-startup-id redshift -c ~/.config/redshift.conf &
 
 #Set compositor
 exec --no-startup-id picom --config ~/.config/i3/picom.conf &
@@ -293,21 +292,17 @@ exec --no-startup-id picom --config ~/.config/i3/picom.conf &
 #icon tray for keyboard layout
 #exec --no-startup-id sbxk
 
+#Starting thunderbird and birdtray
+exec --no-startup-id birdtray
+
 
 #Keybindings to open programs
 bindsym Mod1+Ctrl+n exec brave 
 bindsym Mod1+Ctrl+p exec thunar
 bindsym Mod1+Ctrl+b exec bitwarden-desktop
 bindsym $mod+Shift+Return exec xfce4-terminal -e "ranger"
-#bindsym $mod+Shift+p exec xfce4-settings-manager
 bindsym Print exec xfce4-screenshooter
 bindsym $mod+Shift+x exec lxsession-logout
-# start rofi full
-#bindsym $mod+F11 exec --no-startup-id rofi -show run -fullscreen -font "Noto Sans 14"
-# start rofi small
-#bindsym $mod+F12 exec --no-startup-id rofi -show run -font "Noto Sans 14"
-#https://github.com/adi1090x/rofi
-#bindsym $mod+p exec --no-startup-id ~/.config/rofi/bin/menu_powermenu
 bindsym $mod+Shift+w exec i3lock-fancy 
 
 
@@ -406,13 +401,13 @@ assign [class="Nemo|Thunar|Caja|nautilus|Nautilus|ranger|Ranger"]  → $ws2
 assign [class="zoom|discord|Skype"]  → $ws8
 
 # Workspace 9 General	
-assign [class="bitwarden-desktop|Bitwarden|bitwarden|Encryptr|encryptr|Pamac"]  → $ws9
+assign [class="bitwarden-desktop|Bitwarden|bitwarden|Encryptr|encryptr|Pamac|Thunderbird|birdtray"]  → $ws9
 
 # Workspace 10 Settings	
 assign [class="Lxappearance|lxappearance|Settings|Manjaro-settings|manjaro-settings-manager"]  → $ws10
 
 # Workspace 7 Media	
-assign [class="vlc"]  → $ws7
+assign [class="vlc|electronplayer"]  → $ws7
 
 ######################################################################################################################
 ##################                               Redshift Mode                                       #################
@@ -460,6 +455,9 @@ mode "$mode_redshift" {
 ######################################################################################################################
 ##################                                 Monitor Management                                #################
 ######################################################################################################################
+
+exec --no-startup-id xrandr --output eDP1 --off --output DP1 --off --output DP2 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
+
 
 # setting variables for later use
 # # use xrandr and/or arandr to know the names of your monitors
