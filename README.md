@@ -6,7 +6,7 @@ Here I list the requirements to use this i3 config.
 
 Most important packages
 
-    $ sudo pacman -S i3-gaps i3status dmenu i3lock xorg-xbacklight feh picom  ttf-font-awesome xfce4-terminal 
+    $ sudo pacman -S i3-gaps i3status dmenu i3lock xorg-xbacklight feh picom  ttf-font-awesome alacritty 
 
 Other packages
 
@@ -58,7 +58,7 @@ Most important packages
 
 Other packages
 
-    $ sudo apt install thunar evince flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter
+    $ sudo apt install thunar flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter
 
 Configuring i3-gaps
     
@@ -81,12 +81,15 @@ Namespaces are disabled by default which doesn't allow to run snaps and appimage
     $ echo 'kernel.unprivileged_userns_clone=1' > /etc/sysctl.d/00-local-userns.conf
     $ service procps restart
 
+Flatpak files
+
+    $ flatpak install skype discord zoom thunderbird birdtray evince
 
 # Fedora configuration
 
 Most important packages
 
-    $ sudo dnf install i3 i3status dmenu i3lock feh network-manager-applet picom fontawesome-fonts xfce4-terminal
+    $ sudo dnf install i3 i3status dmenu i3lock feh network-manager-applet picom fontawesome-fonts alacritty
 
 Other packages
 
@@ -127,7 +130,7 @@ Adding Flathub
 
 Add the directory .config/i3/ if it does not exist
 
-    $ cp -r ~/dotfiles/config ~/dotfiles/i3exit.sh ~/dotfiles/i3status.sh ~/dotfiles/picom.conf ~/dotfiles/Backgrounds/ ~/.config/i3
+    $ cp -r ~/dotfiles/config ~/dotfiles/i3exit.sh ~/dotfiles/i3status.conf ~/dotfiles/picom.conf ~/dotfiles/Backgrounds/ ~/.config/i3
     
 # Redshift configuration
     
@@ -138,3 +141,8 @@ Add the directory .config/i3/ if it does not exist
     $ mkdir ~/.config/dunst
     $ sudo cp ~/dotfiles/dunstrc ~/.config/dunst/dunstrc
     $ sudo chown user:user ~/.config/dunst/dunstrc
+
+# Alacritty configuration
+
+    $ mkdir ~/.config/alacritty
+    $ sudo cp ~/dotfiles/alacritty.yml ~/.config/alacritty/
