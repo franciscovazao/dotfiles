@@ -54,7 +54,7 @@ Switching branches in Manjaro
 
 Most important packages
 
-    $ sudo apt install i3 i3status dmenu i3lock feh j4-dmenu-desktop network-manager-gnome compton fonts-font-awesome alacritty
+    $ sudo apt install i3 i3status dmenu i3lock feh j4-dmenu-desktop network-manager-gnome compton fonts-font-awesome xfce4-terminal
 
 Other packages
 
