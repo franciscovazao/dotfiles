@@ -54,7 +54,7 @@ Switching branches in Manjaro
 
 Most important packages
 
-    $ sudo apt install i3 i3status dmenu i3lock feh j4-dmenu-desktop network-manager-gnome compton fonts-font-awesome xfce4-terminal
+    $ sudo apt install i3 i3status dmenu i3lock feh j4-dmenu-desktop network-manager-gnome compton fonts-font-awesome kitty
 
 Other packages
 
@@ -89,7 +89,7 @@ Flatpak files
 
 Most important packages
 
-    $ sudo dnf install i3 i3status dmenu i3lock feh network-manager-applet picom fontawesome-fonts alacritty
+    $ sudo dnf install i3 i3status dmenu i3lock feh network-manager-applet picom fontawesome-fonts kitty
 
 Other packages
 
@@ -126,23 +126,6 @@ Adding Flathub
 
     $ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     
-# i3 configuration
+# Configuration
 
-Add the directory .config/i3/ if it does not exist
-
-    $ cp -r ~/dotfiles/config ~/dotfiles/i3exit.sh ~/dotfiles/i3status.conf ~/dotfiles/picom.conf ~/dotfiles/Backgrounds/ ~/.config/i3
-    
-# Redshift configuration
-    
-    $ cp redshift.conf ~/.config/
-
-# Dunst configuration
-    
-    $ mkdir ~/.config/dunst
-    $ sudo cp ~/dotfiles/dunstrc ~/.config/dunst/dunstrc
-    $ sudo chown user:user ~/.config/dunst/dunstrc
-
-# Alacritty configuration
-
-    $ mkdir ~/.config/alacritty
-    $ sudo cp ~/dotfiles/alacritty.yml ~/.config/alacritty/
+    $ cp -r ~/dotfiles/i3/ ~/dotfiles/dunst/ ~/dotfiles/redshift.conf ~/dotfiles/kitty/ ~/dotfiles/alacritty/ ~/.config/
