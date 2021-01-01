@@ -60,22 +60,6 @@ Other packages
 
     $ sudo apt install thunar flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter
 
-Configuring i3-gaps
-    
-    #Dependencies
-        $ sudo apt install dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 libxcb-shape0-dev meson
-    
-    #Building from source
-        # clone the repository
-        $ git clone https://www.github.com/Airblader/i3 i3-gaps
-        $ cd i3-gaps
-
-    # compile & install
-        $ mkdir -p build && cd build
-        $ meson ..
-        $ ninja
-        $ sudo meson install
-
 Namespaces are disabled by default which doesn't allow to run snaps and appimages, to permanentely enable them:
 
     $ echo 'kernel.unprivileged_userns_clone=1' > /etc/sysctl.d/00-local-userns.conf
@@ -95,23 +79,6 @@ Other packages
 
     $ sudo dnf install thunar evince flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter
 
-Configuring i3-gaps
-    
-    #Dependencies
-
-        $ sudo dnf install libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel pcre-devel pango-devel git gcc automake meson perl-ExtUtils-MenuMaker
-
-    #Building from source
-        # clone the repository
-        $ git clone https://www.github.com/Airblader/i3 i3-gaps
-        $ cd i3-gaps
-
-    # compile & install
-        $ mkdir -p build && cd build
-        $ meson ..
-        $ ninja
-        $ sudo meson install
-
 Enabling RPM Fusion
     
     #Free repo
@@ -125,7 +92,28 @@ Enabling RPM Fusion
 Adding Flathub
 
     $ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# i3-gaps building from source
+
+    #Debian dependencies
+        $ sudo apt install dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 libxcb-shape0-dev meson
+        
+    #Fedora dependencies 
+
+        $ sudo dnf install libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel pcre-devel pango-devel git gcc automake meson perl-ExtUtils-MenuMaker
+        
+    #Building from source
+        # clone the repository
+        $ git clone https://www.github.com/Airblader/i3 i3-gaps
+        $ cd i3-gaps
+
+    # compile & install
+        $ mkdir -p build && cd build
+        $ meson ..
+        $ ninja
+        $ sudo meson install
     
+
 # Configuration
 
     $ cp -r ~/dotfiles/i3/ ~/dotfiles/dunst/ ~/dotfiles/redshift.conf ~/dotfiles/kitty/ ~/dotfiles/alacritty/ ~/.config/
