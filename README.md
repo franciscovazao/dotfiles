@@ -12,10 +12,6 @@ Other packages
 
     $ sudo pacman -S network-manager-applet thunar evince flatpak tlp code vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter thunderbird texlive-most
 
-Additional other packages (Manjaro only):
-
-    $ sudo pacman -S timeshift snapd bitwarden
-
 Configuring yay
 
     $ sudo pacman -S --needed git base-devel
@@ -27,29 +23,12 @@ Configuring yay
 
 Installing yay packages
 
-    $ yay -S j4-dmenu-desktop birdtray brave-bin
+    $ yay -S j4-dmenu-desktop birdtray brave-bin timeshift snapd 
     
-Additional yay packages (Arch only):
-    
-    $ yay -S timeshift snapd 
-
 Installing flatpak packages (see below to conidfigure flapak)
     
-    $ flatpak install skype discord zoom 
+    $ flatpak install skype discord zoom bitwarden
     
-Additional flatpak packages (Arch only):
-
-    $ flatpak install bitwarden
-
-Installing snap packages
-
-    $ snap install electronplayer
-
-Switching branches in Manjaro
-
-    $ sudo pacman-mirrors --api --set-branch {branch} #replace {branch} with stable/testing/unstable
-    $ sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu
-
 # Debian configuration
 
 Most important packages
