@@ -301,6 +301,8 @@ bindsym $mod+Shift+Return exec $term -e "ranger"
 bindsym Print exec xfce4-screenshooter
 bindsym $mod+Shift+x exec ~/.config/rofi/powermenu.sh
 #bindsym $mod+Shift+w exec i3lock 
+bindsym Mod1+Ctrl+c exec code
+bindsym Mod1+Ctrl+e exec thunderbird
 
 
 #####################################################################################################################
@@ -308,10 +310,10 @@ bindsym $mod+Shift+x exec ~/.config/rofi/powermenu.sh
 #####################################################################################################################
 
 # Set inner/outer gaps
-gaps inner 10
-gaps outer -2
+gaps inner 5
+gaps outer 0
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+#smart_gaps on
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
