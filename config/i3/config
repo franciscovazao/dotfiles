@@ -7,20 +7,21 @@
 #Defining essential features 
 #One needs dmenu, feh, awesome fonts, nm-applet,
 
-#Set the super key, mod4 for win and mod1 for alt
+#Set the super key, mod4 for win and mod1 for alt and other variables
 set $mod Mod4
+set $term kitty
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace bold 8
-font pango:DejaVu Mono Bold 12 
+font pango:DejaVu Mono Bold 8 
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -41,18 +42,16 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease 
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec $term
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#FA8385' -sb '#db2f2f' -sf '#191919' -fn 'NotoMonoSans:bold:pixelsize=14'
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-bindsym $mod+Shift+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#191919' -nf '#FA8385' -sb '#db2f2f' -sf '#191919' -fn 'NotoMonoSans:bold:pixelsize=14'"
-
+#bindsym $mod+Shift+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#191919' -nf '#FA8385' -sb '#db2f2f' -sf '#191919' -fn 'NotoMonoSans:bold:pixelsize=14'"
+bindsym $mod+Shift+d exec --no-startup-id ~/.config/rofi/launcher.sh
+#bindsym Mod1+Tab exec --no-startup-id ~/.config/rofi/window_switcher.sh
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -62,7 +61,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 #keyboard layout
-exec setxkbmap -layout gb,pt -option 'grp:alt_shift_toggle'
+exec setxkbmap -layout gb,pt -option 'grp:alt_shift_k_toggle'
 
 #####################################################################################################################
 #################                                Window Management                                  #################
@@ -169,7 +168,7 @@ mode "resize" {
 set $ws1 "1:  "
 set $ws2 "2:  " 
 set $ws3 "3:  "
-set $ws4 "4:  "
+set $ws4 "4:  "
 set $ws5 "5:  "
 set $ws6 "6:  "
 set $ws7 "7:  "
@@ -204,7 +203,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # next/previous workspace
 
 bindsym Mod1+Tab workspace next
-bindsym Mod1+Shift+Tab workspace prev
+bindsym Mod1+Ctrl+Tab workspace prev
 bindsym $mod+Tab workspace back_and_forth
 
 #navigate workspaces next / previous
@@ -226,8 +225,9 @@ focus_on_window_activation focus
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    height 25
+    height 20
     workspace_buttons yes
+    font pango:DejaVu Mono Bold 11
 
     position top
     #position bottom
@@ -252,14 +252,14 @@ bar {
     #status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
     colors {
-    background #2F2F2F
+    background #000000
     statusline #eeeeee
     separator  #666666
 
     #colorclass            border  backgr. text
-    focused_workspace     #a9a9a9 #2F2F2F #eeeeee
+    focused_workspace     #a9a9a9 #000000 #eeeeee
     active_workspace      #a9a9a9 #FA8385 #eeeeee
-    inactive_workspace    #a9a9a9 #222222 #a9a9a9
+    inactive_workspace    #a9a9a9 #000000 #a9a9a9
     urgent_workspace      #a9a9a9 #d42121 #FFFFFF
     }
 
@@ -270,21 +270,18 @@ bar {
 #####################################################################################################################
 
 #Set background
-#exec --no-startup-id feh --randomize --bg-fill ~/MEGA/Backgrounds/*
+#exec --no-startup-id feh --randomize --bg-fill ~/.config/i3/Backgrounds/*
 exec --no-startup-id feh --bg-fill ~/.config/i3/Backgrounds/0TUWjyp.jpg &
 
 #Night light 
 exec --no-startup-id redshift -c ~/.config/redshift.conf &
 
 #Set compositor
-exec --no-startup-id picom --config ~/.config/i3/picom.conf &
+#exec --no-startup-id picom --config ~/.config/i3/picom.conf &
+exec --no-startup-id compton
 
 # Autotiling
 #exec_always --no-startup-id autotiling
-
-#Panel settings
-#exec --no-startup-id xfce4-panel --disable-wm-check
-#exec --no-startup-id xfce4-power-manager &
 
 #Set authetication and session manager
 #exec --no-startup-id lxsession
@@ -293,17 +290,17 @@ exec --no-startup-id picom --config ~/.config/i3/picom.conf &
 #exec --no-startup-id sbxk
 
 #Starting thunderbird and birdtray
-exec --no-startup-id birdtray
+#exec --no-startup-id birdtray
 
 
 #Keybindings to open programs
 bindsym Mod1+Ctrl+n exec brave 
 bindsym Mod1+Ctrl+p exec thunar
 bindsym Mod1+Ctrl+b exec bitwarden-desktop
-bindsym $mod+Shift+Return exec xfce4-terminal -e "ranger"
+bindsym $mod+Shift+Return exec $term -e "ranger"
 bindsym Print exec xfce4-screenshooter
-bindsym $mod+Shift+x exec lxsession-logout
-bindsym $mod+Shift+w exec i3lock-fancy 
+bindsym $mod+Shift+x exec ~/.config/rofi/powermenu.sh
+#bindsym $mod+Shift+w exec i3lock 
 
 
 #####################################################################################################################
