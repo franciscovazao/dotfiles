@@ -6,7 +6,7 @@ Here I list the requirements to use this i3 config.
 
 Most important packages
 
-    $ sudo pacman -S i3-gaps i3status dmenu i3lock xorg-xbacklight feh picom  ttf-font-awesome alacritty 
+    $ sudo pacman -S i3-gaps i3status dmenu i3lock xorg-xbacklight feh picom  ttf-font-awesome alacritty rofi 
 
 Other packages
 
@@ -33,7 +33,7 @@ Installing flatpak packages (see below to conidfigure flapak)
 
 Most important packages
 
-    $ sudo apt install i3 i3status dmenu i3lock feh j4-dmenu-desktop network-manager-gnome compton fonts-font-awesome kitty
+    $ sudo apt install i3 i3status dmenu i3lock feh j4-dmenu-desktop network-manager-gnome compton fonts-font-awesome kitty rofi
 
 Other packages
 
@@ -92,6 +92,6 @@ Adding Flathub
         $ sudo meson install
     
 
-# Configuration
 
-    $ cp -r ~/dotfiles/i3/ ~/dotfiles/dunst/ ~/dotfiles/redshift.conf ~/dotfiles/kitty/ ~/dotfiles/alacritty/ ~/.config/
+
+
