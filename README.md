@@ -4,13 +4,9 @@ Here I list the requirements to use this i3 config.
 
 # Arch/Manjaro configuration
 
-Most important packages
+Packages
 
-    $ sudo pacman -S i3-gaps i3status dmenu i3lock xorg-xbacklight feh picom  ttf-font-awesome alacritty rofi 
-
-Other packages
-
-    $ sudo pacman -S network-manager-applet thunar evince flatpak tlp code vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter thunderbird texlive-most
+    $ sudo pacman -S i3-gaps i3status dmenu i3lock xorg-xbacklight feh picom  ttf-font-awesome alacritty rofi network-manager-applet thunar evince flatpak tlp code vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter thunderbird texlive-most
 
 Configuring yay
 
@@ -33,11 +29,7 @@ Installing flatpak packages (see below to conidfigure flapak)
 
 Most important packages
 
-    $ sudo apt install i3 i3status dmenu i3lock feh j4-dmenu-desktop network-manager-gnome compton fonts-font-awesome kitty rofi
-
-Other packages
-
-    $ sudo apt install thunar flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter
+    $ sudo apt install i3 i3status dmenu i3lock feh j4-dmenu-desktop network-manager-gnome compton fonts-font-awesome kitty rofi thunar flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter
 
 Namespaces are disabled by default which doesn't allow to run snaps and appimages, to permanentely enable them:
 
@@ -52,11 +44,7 @@ Flatpak files
 
 Most important packages
 
-    $ sudo dnf install i3 i3status dmenu i3lock feh network-manager-applet picom fontawesome-fonts kitty
-
-Other packages
-
-    $ sudo dnf install thunar evince flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter
+    $ sudo dnf install i3 i3status dmenu i3lock feh network-manager-applet picom fontawesome-fonts kitty rofi thunar evince flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter
 
 Enabling RPM Fusion
     
