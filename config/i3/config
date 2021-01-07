@@ -48,9 +48,9 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#FA8385' -sb '#db2f2f' -sf '#191919' -fn 'NotoMonoSans:bold:pixelsize=14'
-#bindsym $mod+Shift+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#191919' -nf '#FA8385' -sb '#db2f2f' -sf '#191919' -fn 'NotoMonoSans:bold:pixelsize=14'"
-bindsym $mod+Shift+d exec --no-startup-id ~/.config/rofi/launcher.sh
+bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#FA8385' -sb '#db2f2f' -sf '#191919' -fn 'NotoMonoSans:bold:pixelsize=14'
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#191919' -nf '#FA8385' -sb '#db2f2f' -sf '#191919' -fn 'NotoMonoSans:bold:pixelsize=14'"
+#bindsym $mod+Shift+d exec --no-startup-id ~/.config/rofi/launcher.sh
 #bindsym Mod1+Tab exec --no-startup-id ~/.config/rofi/window_switcher.sh
 
 # reload the configuration file
@@ -68,7 +68,7 @@ exec setxkbmap -layout gb,pt -option 'grp:alt_shift_toggle'
 #####################################################################################################################
 
 #Window style settings
-default_border pixel 1 
+default_border pixel 2 
 default_floating_border normal
 #hide_edge_borders pixel 
 
@@ -89,10 +89,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -101,10 +101,10 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+#bindsym $mod+Shift+Left move left
+#bindsym $mod+Shift+Down move down
+#bindsym $mod+Shift+Up move up
+#bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+z split h
@@ -116,7 +116,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -148,10 +148,10 @@ mode "resize" {
         bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        #bindsym Left resize shrink width 10 px or 10 ppt
+        #bindsym Down resize grow height 10 px or 10 ppt
+        #bindsym Up resize shrink height 10 px or 10 ppt
+        #bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -170,7 +170,7 @@ set $ws2 "2:  "
 set $ws3 "3:  "
 set $ws4 "4:  "
 set $ws5 "5:  "
-set $ws6 "6:  "
+set $ws6 "6:  "
 set $ws7 "7:  "
 set $ws8 "8:  "
 set $ws9 "9:  "
@@ -207,8 +207,8 @@ bindsym Mod1+Ctrl+Tab workspace prev
 bindsym $mod+Tab workspace back_and_forth
 
 #navigate workspaces next / previous
-bindsym Mod1+Ctrl+Right workspace next
-bindsym Mod1+Ctrl+Left workspace prev
+#bindsym Mod1+Ctrl+Right workspace next
+#bindsym Mod1+Ctrl+Left workspace prev
 bindsym Mod1+Ctrl+l workspace next
 bindsym Mod1+Ctrl+h workspace prev
 
@@ -228,9 +228,7 @@ bar {
     height 20
     workspace_buttons yes
     font pango:DejaVu Mono Bold 11
-
     position top
-    #position bottom
 
     #system icons
     #tray_output none
@@ -278,7 +276,7 @@ exec --no-startup-id redshift -c ~/.config/redshift.conf &
 
 #Set compositor
 #exec --no-startup-id picom --config ~/.config/i3/picom.conf &
-exec --no-startup-id compton
+exec --no-startup-id picom
 
 # Autotiling
 #exec_always --no-startup-id autotiling
@@ -299,8 +297,9 @@ bindsym Mod1+Ctrl+p exec thunar
 bindsym Mod1+Ctrl+b exec bitwarden-desktop
 bindsym $mod+Shift+Return exec $term -e "ranger"
 bindsym Print exec xfce4-screenshooter
-bindsym $mod+Shift+x exec ~/.config/rofi/powermenu.sh
-#bindsym $mod+Shift+w exec i3lock 
+bindsym $mod+Shift+x exec lxsession-logout
+#bindsym $mod+Shift+x exec ~/.config/rofi/powermenu.sh
+bindsym $mod+Shift+w exec i3lock 
 bindsym Mod1+Ctrl+c exec code
 bindsym Mod1+Ctrl+e exec thunderbird
 
@@ -313,7 +312,7 @@ bindsym Mod1+Ctrl+e exec thunderbird
 gaps inner 5
 gaps outer 0
 # Smart gaps (gaps used if only more than one container on the workspace)
-#smart_gaps on
+smart_gaps on
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -383,30 +382,34 @@ mode "$mode_system" {
 # Assign application to start on a specific workspace
 # you can find the class with the program xprop
 
-# Workspace 4 browser related
-assign [class="Firefox|Chromium|Google-chrome|Brave"]    → $ws4
+# Workspace 2 file managers
+assign [class="Nemo|Thunar|Caja|nautilus|Nautilus|ranger|Ranger"]  → $ws2
 
 # Workspace 3 text editor related
 assign [class="sublime-text|sublime_text|Sublime_text|subl|Subl|subl3|Subl3"]      → $ws3
 assign [class="Xed|xed|Brackets|Atom|Code|Geany|Vscode|Vim|code-oss"]              → $ws3
 
+# Workspace 4 browser related
+assign [class="Firefox|Chromium|Google-chrome|Brave"]    → $ws4
+
 # Workspace 5 PDF 
 assign [class="Evince|Qpdfview|Djview|Zathura"]  → $ws5
 
-# Workspace 2 file managers
-assign [class="Nemo|Thunar|Caja|nautilus|Nautilus|ranger|Ranger"]  → $ws2
+# Workspace 6 Email
+assign [class="Thunderbird|Evolution"]  → $ws6
+
+# Workspace 7 Media	
+assign [class="vlc|electronplayer"]  → $ws7
 
 # Workspace 8 VideoConference
 assign [class="zoom|discord|Skype"]  → $ws8
 
 # Workspace 9 General	
-assign [class="bitwarden-desktop|Bitwarden|bitwarden|Encryptr|encryptr|Pamac|Thunderbird|birdtray"]  → $ws9
+assign [class="bitwarden-desktop|Bitwarden|bitwarden|Encryptr|encryptr|Pamac|Thunderbird"]  → $ws9
 
 # Workspace 10 Settings	
 assign [class="Lxappearance|lxappearance|Settings|Manjaro-settings|manjaro-settings-manager"]  → $ws10
 
-# Workspace 7 Media	
-assign [class="vlc|electronplayer"]  → $ws7
 
 ######################################################################################################################
 ##################                               Redshift Mode                                       #################
@@ -450,12 +453,13 @@ mode "$mode_redshift" {
 ## bindsym button9 move left
 ## bindsym button8 move right
 
+focus_follows_mouse no
 
 ######################################################################################################################
 ##################                                 Monitor Management                                #################
 ######################################################################################################################
 
-exec --no-startup-id xrandr --output eDP1 --off --output DP1 --off --output DP2 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
+#exec --no-startup-id xrandr --output eDP1 --off --output DP1 --off --output DP2 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
 
 
 # setting variables for later use
