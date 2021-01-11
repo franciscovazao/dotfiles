@@ -10,6 +10,7 @@
 #Set the super key, mod4 for win and mod1 for alt and other variables
 set $mod Mod4
 set $term kitty
+set $browser firefox
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -61,7 +62,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 #keyboard layout
-exec setxkbmap -layout gb,pt -option 'grp:alt_shift_toggle'
+exec "setxkbmap -layout gb,pt" 
+exec "setxkbmap -option 'grp:alt_shift_toggle'"
 
 #####################################################################################################################
 #################                                Window Management                                  #################
@@ -81,6 +83,11 @@ client.placeholder      #FF8787 #222222 #000000 #222222
 client.urgent           #FF8787 #FF8787 #f7f7f7 #FF8787
 client.background       #242424
 
+no_focus [window_role="pop-up"]
+title_align center
+
+
+#popup_during_fullscreen smart
 
 # change focus
 bindsym $mod+h focus left
@@ -230,6 +237,11 @@ bar {
     font pango:DejaVu Mono Bold 11
     position top
 
+    mode hide
+    hidden_state hide
+    modifier Mod1+Ctrl
+    strip_workspace_numbers yes
+
     #system icons
     #tray_output none
     #tray_output $firstMonitor
@@ -243,6 +255,7 @@ bar {
 
     #status_command i3status
     status_command i3status -c ~/.config/i3/i3status.conf
+
 
     # OPTION 2 : i3blocks
 
@@ -259,6 +272,7 @@ bar {
     active_workspace      #a9a9a9 #FA8385 #eeeeee
     inactive_workspace    #a9a9a9 #000000 #a9a9a9
     urgent_workspace      #a9a9a9 #d42121 #FFFFFF
+    binding_mode          #a9a9a9 #000000 #eeeeee
     }
 
 }
@@ -276,25 +290,15 @@ exec --no-startup-id redshift -c ~/.config/redshift.conf &
 
 #Set compositor
 #exec --no-startup-id picom --config ~/.config/i3/picom.conf &
-exec --no-startup-id picom
-
-# Autotiling
-#exec_always --no-startup-id autotiling
+exec --no-startup-id compton
 
 #Set authetication and session manager
 #exec --no-startup-id lxsession
 
-#icon tray for keyboard layout
-#exec --no-startup-id sbxk
-
-#Starting thunderbird and birdtray
-#exec --no-startup-id birdtray
-
-
 #Keybindings to open programs
-bindsym Mod1+Ctrl+n exec brave 
+bindsym Mod1+Ctrl+n exec $browser 
 bindsym Mod1+Ctrl+p exec thunar
-bindsym Mod1+Ctrl+b exec bitwarden-desktop
+bindsym Mod1+Ctrl+b exec flatpak run com.bitwarden.desktop 
 bindsym $mod+Shift+Return exec $term -e "ranger"
 bindsym Print exec xfce4-screenshooter
 bindsym $mod+Shift+x exec lxsession-logout
@@ -396,7 +400,7 @@ assign [class="Firefox|Chromium|Google-chrome|Brave"]    → $ws4
 assign [class="Evince|Qpdfview|Djview|Zathura"]  → $ws5
 
 # Workspace 6 Email
-assign [class="Thunderbird|Evolution"]  → $ws6
+assign [class="thunderbird|Evolution"]  → $ws6
 
 # Workspace 7 Media	
 assign [class="vlc|electronplayer"]  → $ws7
@@ -510,6 +514,5 @@ bindsym $mod+Shift+minus move scratchpad
 #
 # # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
-
 
 
