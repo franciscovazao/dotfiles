@@ -62,7 +62,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 #keyboard layout
-exec "setxkbmap -layout gb,pt" 
+exec "setxkbmap -layout pt,gb" 
 exec "setxkbmap -option 'grp:alt_shift_toggle'"
 
 #####################################################################################################################
@@ -237,9 +237,10 @@ bar {
     font pango:DejaVu Mono Bold 11
     position top
 
-    mode hide
-    hidden_state hide
-    modifier Mod1+Ctrl
+    #mode hide
+    #hidden_state hide
+    #modifier Mod1+Ctrl
+    
     strip_workspace_numbers yes
 
     #system icons
@@ -268,10 +269,10 @@ bar {
     separator  #666666
 
     #colorclass            border  backgr. text
-    focused_workspace     #a9a9a9 #000000 #eeeeee
-    active_workspace      #a9a9a9 #FA8385 #eeeeee
-    inactive_workspace    #a9a9a9 #000000 #a9a9a9
-    urgent_workspace      #a9a9a9 #d42121 #FFFFFF
+    focused_workspace     #000000 #000000 #eeeeee
+    active_workspace      #000000 #FA8385 #eeeeee
+    inactive_workspace    #000000 #000000 #a9a9a9
+    urgent_workspace      #000000 #d42121 #FFFFFF
     binding_mode          #a9a9a9 #000000 #eeeeee
     }
 
@@ -409,10 +410,10 @@ assign [class="vlc|electronplayer"]  → $ws7
 assign [class="zoom|discord|Skype"]  → $ws8
 
 # Workspace 9 General	
-assign [class="bitwarden-desktop|Bitwarden|bitwarden|Encryptr|encryptr|Pamac|Thunderbird"]  → $ws9
+assign [class="libreoffice"]  → $ws9
 
 # Workspace 10 Settings	
-assign [class="Lxappearance|lxappearance|Settings|Manjaro-settings|manjaro-settings-manager"]  → $ws10
+assign [class="bitwarden-desktop|Bitwarden|bitwarden|Pamac|Lxappearance|lxappearance|Settings|Manjaro-settings|manjaro-settings-manager"]  → $ws10
 
 
 ######################################################################################################################
