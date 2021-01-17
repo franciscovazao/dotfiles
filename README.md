@@ -29,7 +29,7 @@ Installing flatpak packages (see below to conidfigure flapak)
 
 Most important packages
 
-    $ sudo apt install i3 i3status dmenu i3lock feh j4-dmenu-desktop network-manager-gnome compton fonts-font-awesome kitty rofi thunar flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter
+    $ sudo apt install i3 i3status dmenu i3lock i3lock-fancy feh j4-dmenu-desktop network-manager-gnome compton fonts-font-awesome kitty rofi thunar flatpak tlp timeshift vim lxsession lxappearance redshift blueman dunst ranger xfce4-screenshooter
 
 Namespaces are disabled by default which doesn't allow to run snaps and appimages, to permanentely enable them:
 
