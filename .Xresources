@@ -1,0 +1,59 @@
+URxvt.font:     xft:bitstream dejavu sans mono:size=12:antialias=true
+URxvt.boldFont: xft:bitstream dejavu sans mono:bold:size=12:antialias=true
+
+!! Colorscheme
+
+! special
+*.foreground: #93a1a1
+*.background: #141c21
+*.cursorColor: #afbfbf
+
+! black
+*.color0:   #000000
+*.color8:   #656565
+ 
+! red
+*.color1:   #FF9494
+*.color9:   #FF9494
+ 
+! green
+*.color2:    #FF9494
+*.color10:   #FF9494
+ 
+! yellow
+*.color3:    #FF9494
+*.color11:#FF9494
+
+! blue
+*.color4:   #75B4FD
+*.color12:  #75B4FD
+ 
+! magenta
+*.color5:   #75B4FD
+*.color13:  #75B4FD
+ 
+! cyan
+*.color6:   #75B4FD
+*.color14:  #75B4FD
+ 
+! white
+*.color7:   #ffffff
+color15:  #ffffff
+
+!! URxvt Appearance
+!URxvt.font: pango:DejaVu
+!URxvt.boldFont: pango:DejaVu
+!URxvt.italicFont: pango:DejaVu
+!URxvt.boldItalicfont: pango:DejaVu
+URxvt.letterSpace: -5 
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxvt.internalBorder: 24
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+URxvt.iso14755: false

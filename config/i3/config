@@ -11,7 +11,7 @@
 set $mod Mod4
 set $term kitty
 set $browser firefox
-set $tblack #00000077
+set $tblack #00000066
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -50,8 +50,8 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#FA8385' -sb '#db2f2f' -sf '#191919' -fn 'NotoMonoSans:bold:pixelsize=14'
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#191919' -nf '#FA8385' -sb '#db2f2f' -sf '#191919' -fn 'NotoMonoSans:bold:pixelsize=14'"
+bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#000000' -nf '#eeeeee' -sb '#75B4FD' -sf '#000000' -fn 'NotoMonoSans:bold:pixelsize=14'
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#000000' -nf '#eeeeee' -sb '#75B4FD' -sf '#000000' -fn 'NotoMonoSans:bold:pixelsize=14'"
 #bindsym $mod+Shift+d exec --no-startup-id ~/.config/rofi/launcher.sh
 #bindsym Mod1+Tab exec --no-startup-id ~/.config/rofi/window_switcher.sh
 
@@ -86,7 +86,6 @@ client.background       #242424
 
 no_focus [window_role="pop-up"]
 title_align center
-
 
 #popup_during_fullscreen smart
 
@@ -238,9 +237,9 @@ bar {
     font pango:DejaVu Mono Bold 11
     position top
 
-    #mode hide
-    #hidden_state hide
-    #modifier Mod1+Ctrl
+    mode dock
+    hidden_state show
+    modifier Mod1+Ctrl
     
     strip_workspace_numbers yes
 
@@ -309,6 +308,7 @@ bindsym $mod+Shift+x exec lxsession-logout
 bindsym $mod+Shift+w exec i3lock-fancy
 bindsym Mod1+Ctrl+c exec code
 bindsym Mod1+Ctrl+e exec thunderbird
+bindsym Mod1+Ctrl+t exec urxvt
 
 
 #####################################################################################################################
@@ -412,10 +412,10 @@ assign [class="vlc|electronplayer"]  → $ws7
 assign [class="zoom|discord|Skype"]  → $ws8
 
 # Workspace 9 General	
-assign [class="libreoffice"]  → $ws9
+assign [class="libreoffice|qBittorrent"]  → $ws9
 
 # Workspace 10 Settings	
-assign [class="bitwarden-desktop|Bitwarden|bitwarden|Pamac|Lxappearance|lxappearance|Settings|Manjaro-settings|manjaro-settings-manager"]  → $ws10
+assign [class="Bitwarden|Pamac|Lxappearance"]  → $ws10
 
 
 ######################################################################################################################
