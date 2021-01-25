@@ -26,6 +26,23 @@ case $desktop in
     else
     polybar --reload mainbar-i3 -c ~/.config/polybar/config &
     fi
+    
+#    if type "xrandr" > /dev/null; then
+#      for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+#        MONITOR=$m polybar --reload date -c ~/.config/polybar/config &
+#      done
+#    else
+#    polybar --reload date -c ~/.config/polybar/config &
+#    fi
+#
+#    if type "xrandr" > /dev/null; then
+#      for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+#        MONITOR=$m polybar --reload status -c ~/.config/polybar/config &
+#      done
+#    else
+#    polybar --reload status -c ~/.config/polybar/config &
+#    fi    
+
     # second polybar at bottom
     # if type "xrandr" > /dev/null; then
     #   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do

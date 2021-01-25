@@ -5,13 +5,13 @@
 #####################################################################################################################
 
 #Defining essential features 
-#One needs dmenu, feh, awesome fonts, nm-applet,
+#One needs dmenu, feh, awesome fonts, nm-applet
 
 #Set the super key, mod4 for win and mod1 for alt and other variables
 set $mod Mod4
 set $term kitty
 set $browser firefox
-set $tblack #00000066
+set $tblack #00000099
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -44,7 +44,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease 
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $term
+bindsym $mod+Return exec --no-startup-id $term
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -63,8 +63,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 #keyboard layout
-exec "setxkbmap -layout pt,gb" 
-exec "setxkbmap -option 'grp:alt_shift_toggle'"
+exec --no-startup-id "setxkbmap -layout pt,gb -option 'grp:alt_shift_toggle' -option caps:escape" 
+#exec --no-startup-id "setxkbmap -option caps:escape"
 
 #####################################################################################################################
 #################                                Window Management                                  #################
@@ -77,15 +77,16 @@ default_floating_border normal
 
 # Window color settings
 # class                 border  backgr. text    indicator
-client.focused          #FF8787 #FF8787 #000000 #FF8787
-client.unfocused        #FF8787 #222222 #FFFFFF #222222
-client.focused_inactive #FF8787 #222222 #a9a9a9 #222222
-client.placeholder      #FF8787 #222222 #000000 #222222
-client.urgent           #FF8787 #FF8787 #f7f7f7 #FF8787
+client.focused          #B6B6B6 #B6B6B6 #000000 #B6B6B6
+client.unfocused        #B6B6B6 #222222 #FFFFFF #222222
+client.focused_inactive #B6B6B6 #222222 #a9a9a9 #222222
+client.placeholder      #B6B6B6 #222222 #000000 #222222
+client.urgent           #B6B6B6 #B6B6B6 #f7f7f7 #B6B6B6
 client.background       #242424
 
 no_focus [window_role="pop-up"]
 title_align center
+#hide_edge_borders smart_no_gaps
 
 #popup_during_fullscreen smart
 
@@ -172,16 +173,16 @@ mode "resize" {
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places. Awesome fonts are needed.
-set $ws1 "1:  "
-set $ws2 "2:  " 
-set $ws3 "3:  "
-set $ws4 "4:  "
-set $ws5 "5:  "
-set $ws6 "6:  "
-set $ws7 "7:  "
-set $ws8 "8:  "
-set $ws9 "9:  "
-set $ws10 "10:  "
+set $ws1 "1: "
+set $ws2 "2: " 
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: "
+set $ws6 "6: "
+set $ws7 "7: "
+set $ws8 "8: "
+set $ws9 "9: "
+set $ws10 "10: "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -222,7 +223,7 @@ bindsym Mod1+Ctrl+h workspace prev
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus		
-focus_on_window_activation focus
+#focus_on_window_activation smart
 
 #####################################################################################################################
 #################                                    Top Panel                                      #################
@@ -231,54 +232,56 @@ focus_on_window_activation focus
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    height 20
-    workspace_buttons yes
-    font pango:DejaVu Mono Bold 11
-    position top
+#bar {
+#   height 20
+#   workspace_buttons yes
+#   font pango:DejaVu Mono Bold 11
+#   position top
+#
+#   mode dock
+#   hidden_state show
+#   modifier Mod1+Ctrl
+#   
+#   strip_workspace_numbers yes
+#
+#   #system icons
+#   #tray_output none
+#   #tray_output $firstMonitor
+#   #tray_output $secondMonitor
+#
+#   # OPTION 1 : i3status
+#
+#   # type status_command i3status without the config file and
+#   # you will get the standard i3status bar
+#   # Second one is the standard statusbar with my personal settings
+#
+#   #status_command i3status
+#   i3bar_command i3bar --transparency
+#   status_command i3status -c ~/.config/i3/i3status.conf 
+#
+#
+#   # OPTION 2 : i3blocks
+#
+#   #status_command i3blocks
+#   #status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#
+#   colors {
+#   background $tblack
+#   statusline #eeeeeeFF
+#   separator  #666666FF
+#
+#   #colorclass            border   backgr.    text
+#   focused_workspace     $tblack   $tblack   #eeeeeeFF
+#   active_workspace      $tblack   #FA8385FF #eeeeeeFF
+#   inactive_workspace    $tblack   $tblack  #a9a9a9FF
+#   urgent_workspace      $tblack   #d42121FF #FFFFFFFF
+#   binding_mode          #a9a9a9FF $tblack   #eeeeeeFF
+#   }
+#
+#
 
-    mode dock
-    hidden_state show
-    modifier Mod1+Ctrl
-    
-    strip_workspace_numbers yes
-
-    #system icons
-    #tray_output none
-    #tray_output $firstMonitor
-    #tray_output $secondMonitor
-
-    # OPTION 1 : i3status
-
-    # type status_command i3status without the config file and
-    # you will get the standard i3status bar
-    # Second one is the standard statusbar with my personal settings
-
-    #status_command i3status
-    i3bar_command i3bar --transparency
-    status_command i3status -c ~/.config/i3/i3status.conf 
-
-
-    # OPTION 2 : i3blocks
-
-    #status_command i3blocks
-    #status_command i3blocks -c ~/.config/i3/i3blocks.conf
-
-    colors {
-    background $tblack
-    statusline #eeeeeeFF
-    separator  #666666FF
-
-    #colorclass            border   backgr.    text
-    focused_workspace     $tblack   $tblack   #eeeeeeFF
-    active_workspace      $tblack   #FA8385FF #eeeeeeFF
-    inactive_workspace    $tblack   $tblack  #a9a9a9FF
-    urgent_workspace      $tblack   #d42121FF #FFFFFFFF
-    binding_mode          #a9a9a9FF $tblack   #eeeeeeFF
-    }
-
-}
-
+#Polybar
+exec_always --no-startup-id ~/.config/polybar/launch-polybar.sh &
 #####################################################################################################################
 #################                         Startup and open applications                             #################
 #####################################################################################################################
@@ -295,20 +298,20 @@ exec --no-startup-id redshift -c ~/.config/redshift.conf &
 exec --no-startup-id compton
 
 #Set authetication and session manager
-#exec --no-startup-id lxsession
+exec --no-startup-id lxsession
 
 #Keybindings to open programs
-bindsym Mod1+Ctrl+n exec $browser 
-bindsym Mod1+Ctrl+p exec thunar
-bindsym Mod1+Ctrl+b exec flatpak run com.bitwarden.desktop 
-bindsym $mod+Shift+Return exec $term -e "ranger"
-bindsym Print exec xfce4-screenshooter
-bindsym $mod+Shift+x exec lxsession-logout
+bindsym Mod1+Ctrl+n exec --no-startup-id $browser 
+bindsym Mod1+Ctrl+p exec --no-startup-id thunar; focus
+bindsym Mod1+Ctrl+b exec --no-startup-id flatpak run com.bitwarden.desktop 
+bindsym $mod+Shift+Return exec --no-startup-id $term -e "ranger"
+bindsym Print exec --no-startup-id xfce4-screenshooter
+bindsym $mod+Shift+x exec --no-startup-id lxsession-logout
 #bindsym $mod+Shift+x exec ~/.config/rofi/powermenu.sh
-bindsym $mod+Shift+w exec i3lock-fancy
-bindsym Mod1+Ctrl+c exec code
-bindsym Mod1+Ctrl+e exec thunderbird
-bindsym Mod1+Ctrl+t exec urxvt
+bindsym $mod+Shift+w exec --no-startup-id i3lock-fancy
+bindsym Mod1+Ctrl+c exec --no-startup-id code
+bindsym Mod1+Ctrl+e exec --no-startup-id thunderbird
+bindsym Mod1+Ctrl+t exec --no-startup-id urxvt
 
 
 #####################################################################################################################
@@ -317,9 +320,12 @@ bindsym Mod1+Ctrl+t exec urxvt
 
 # Set inner/outer gaps
 gaps inner 5
-gaps outer 0
+#gaps outer 0
+#gaps top -5
+
 # Smart gaps (gaps used if only more than one container on the workspace)
 #smart_gaps on
+#smart_gaps inverse_outer
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -390,7 +396,7 @@ mode "$mode_system" {
 # you can find the class with the program xprop
 
 # Workspace 2 file managers
-assign [class="Nemo|Thunar|Caja|nautilus|Nautilus|ranger|Ranger"]  → $ws2
+assign [class="Nemo|Thunar|thunar|Caja|nautilus|Nautilus|ranger|Ranger"]  → $ws2
 
 # Workspace 3 text editor related
 assign [class="sublime-text|sublime_text|Sublime_text|subl|Subl|subl3|Subl3"]      → $ws3
