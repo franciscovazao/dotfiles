@@ -1,0 +1,26 @@
+[mailwatch-plugin]
+click_command=exo-open --launch MailReader
+new_messages_command=notify-send "New mail" "You have new messages in your inbox" -i xfce-newmail
+normal_icon=xfce-nomail
+new_mail_icon=xfce-newmail
+log_lines=200
+show_log_status=true
+auto_open_online_doc=false
+
+[mailwatch]
+nmailboxes=1
+mailbox0=imap
+mailbox_name0=Tecnico
+
+[mailbox0]
+host=mail.tecnico.ulisboa.pt
+username=francisco.vazao@tecnico.ulisboa.pt
+password=Gaqfqpiwrvxnet1206
+auth_type=1
+server_directory=
+use_standard_port=0
+nonstandard_port=993
+timeout=60
+n_newmail_boxes=1
+newmail_box_0=INBOX
+

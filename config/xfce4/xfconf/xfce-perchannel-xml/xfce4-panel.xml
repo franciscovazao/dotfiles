@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="int" value="2"/>
+  <property name="panels" type="array">
+    <value type="int" value="1"/>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=6;x=960;y=16"/>
+      <property name="length" type="uint" value="100"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="size" type="uint" value="30"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="1"/>
+        <value type="int" value="20"/>
+        <value type="int" value="16"/>
+        <value type="int" value="3"/>
+        <value type="int" value="15"/>
+        <value type="int" value="4"/>
+        <value type="int" value="19"/>
+        <value type="int" value="7"/>
+        <value type="int" value="11"/>
+        <value type="int" value="13"/>
+        <value type="int" value="5"/>
+      </property>
+      <property name="leave-opacity" type="uint" value="100"/>
+      <property name="enter-opacity" type="uint" value="100"/>
+      <property name="background-alpha" type="uint" value="100"/>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="background-color" type="array">
+        <value type="uint" value="2827"/>
+        <value type="uint" value="2827"/>
+        <value type="uint" value="3341"/>
+        <value type="uint" value="65535"/>
+      </property>
+      <property name="mode" type="uint" value="0"/>
+      <property name="nrows" type="uint" value="1"/>
+      <property name="autohide-behavior" type="uint" value="0"/>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-3" type="string" value="tasklist">
+      <property name="flat-buttons" type="bool" value="false"/>
+      <property name="show-handle" type="bool" value="true"/>
+      <property name="sort-order" type="uint" value="1"/>
+      <property name="grouping" type="uint" value="0"/>
+    </property>
+    <property name="plugin-15" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-4" type="string" value="pager">
+      <property name="rows" type="uint" value="1"/>
+      <property name="workspace-scrolling" type="bool" value="false"/>
+    </property>
+    <property name="plugin-5" type="string" value="clock">
+      <property name="mode" type="uint" value="2"/>
+    </property>
+    <property name="plugin-7" type="string" value="power-manager-plugin"/>
+    <property name="plugin-11" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="mpris-players" type="string" value="chromium.instance10857;chromium.instance1717;chromium.instance1797;chromium.instance1821;chromium.instance1859;chromium.instance2012;chromium.instance2123;chromium.instance2352;chromium.instance2711;chromium.instance3719;chromium.instance3909;chromium.instance4348;chromium.instance5216;chromium.instance5993;chromium.instance8757;chromium.instance9643;spotify"/>
+      <property name="blacklisted-players" type="string" value=""/>
+    </property>
+    <property name="plugin-1" type="string" value="whiskermenu"/>
+    <property name="plugin-13" type="string" value="systray">
+      <property name="names-visible" type="array">
+        <value type="string" value="birdtray"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="megasync"/>
+        <value type="string" value="xfce terminal"/>
+        <value type="string" value="skypeforlinux"/>
+      </property>
+    </property>
+    <property name="plugin-16" type="string" value="directorymenu">
+      <property name="base-directory" type="string" value="/home/franciscovazao"/>
+      <property name="hidden-files" type="bool" value="false"/>
+    </property>
+    <property name="plugin-19" type="string" value="mailwatch"/>
+    <property name="plugin-20" type="string" value="separator">
+      <property name="style" type="uint" value="2"/>
+      <property name="expand" type="bool" value="false"/>
+    </property>
+  </property>
+</channel>
