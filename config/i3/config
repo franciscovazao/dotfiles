@@ -10,8 +10,8 @@
 #Set the super key, mod4 for win and mod1 for alt and other variables
 set $mod Mod4
 set $term kitty
-set $browser firefox
-set $tblack #00000099
+set $browser brave
+set $tblack #ffffff66
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -51,8 +51,8 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#000000' -nf '#eeeeee' -sb '#75B4FD' -sf '#000000' -fn 'NotoMonoSans:bold:pixelsize=14'
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#000000' -nf '#eeeeee' -sb '#75B4FD' -sf '#000000' -fn 'NotoMonoSans:bold:pixelsize=14'"
-#bindsym $mod+Shift+d exec --no-startup-id ~/.config/rofi/launcher.sh
+#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -nb '#000000' -nf '#eeeeee' -sb '#75B4FD' -sf '#000000' -fn 'NotoMonoSans:bold:pixelsize=14'"
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launcher.sh
 #bindsym Mod1+Tab exec --no-startup-id ~/.config/rofi/window_switcher.sh
 
 # reload the configuration file
@@ -71,17 +71,17 @@ exec --no-startup-id "setxkbmap -layout pt,gb -option 'grp:alt_shift_toggle' -op
 #####################################################################################################################
 
 #Window style settings
-default_border pixel 2 
-default_floating_border normal
+default_border pixel 0 
+default_floating_border pixel 0
 #hide_edge_borders pixel 
 
 # Window color settings
 # class                 border  backgr. text    indicator
-client.focused          #B6B6B6 #B6B6B6 #000000 #B6B6B6
-client.unfocused        #B6B6B6 #222222 #FFFFFF #222222
-client.focused_inactive #B6B6B6 #222222 #a9a9a9 #222222
-client.placeholder      #B6B6B6 #222222 #000000 #222222
-client.urgent           #B6B6B6 #B6B6B6 #f7f7f7 #B6B6B6
+client.focused          #dfaca0 #dfaca0 #000000 #B6B6B6
+client.unfocused        #dfaca0 #222222 #FFFFFF #222222
+client.focused_inactive #dfaca0 #222222 #a9a9a9 #222222
+client.placeholder      #dfaca0 #222222 #000000 #222222
+client.urgent           #dfaca0 #dfaca0 #f7f7f7 #B6B6B6
 client.background       #242424
 
 no_focus [window_role="pop-up"]
@@ -277,8 +277,8 @@ for_window [urgent=latest] focus
 #   urgent_workspace      $tblack   #d42121FF #FFFFFFFF
 #   binding_mode          #a9a9a9FF $tblack   #eeeeeeFF
 #   }
-#
-#
+#}
+
 
 #Polybar
 exec_always --no-startup-id ~/.config/polybar/launch-polybar.sh &
@@ -288,26 +288,26 @@ exec_always --no-startup-id ~/.config/polybar/launch-polybar.sh &
 
 #Set background
 #exec --no-startup-id feh --randomize --bg-fill ~/.config/i3/Backgrounds/*
-exec --no-startup-id feh --bg-fill ~/.config/i3/Backgrounds/0TUWjyp.jpg &
+exec --no-startup-id feh --bg-fill ~/.config/i3/Backgrounds/sunset.png &
 
 #Night light 
 exec --no-startup-id redshift -c ~/.config/redshift.conf &
 
 #Set compositor
-#exec --no-startup-id picom --config ~/.config/i3/picom.conf &
-exec --no-startup-id compton
+exec_always --no-startup-id picom &
+#exec --no-startup-id compton
 
 #Set authetication and session manager
-exec --no-startup-id lxsession
+#exec --no-startup-id lxpolkit
 
 #Keybindings to open programs
 bindsym Mod1+Ctrl+n exec --no-startup-id $browser 
-bindsym Mod1+Ctrl+p exec --no-startup-id thunar; focus
+bindsym Mod1+Ctrl+p exec --no-startup-id thunar 
 bindsym Mod1+Ctrl+b exec --no-startup-id flatpak run com.bitwarden.desktop 
 bindsym $mod+Shift+Return exec --no-startup-id $term -e "ranger"
 bindsym Print exec --no-startup-id xfce4-screenshooter
-bindsym $mod+Shift+x exec --no-startup-id lxsession-logout
-#bindsym $mod+Shift+x exec ~/.config/rofi/powermenu.sh
+#bindsym $mod+Shift+x exec --no-startup-id lxsession-logout
+bindsym $mod+Shift+x exec ~/.config/rofi/powermenu.sh
 bindsym $mod+Shift+w exec --no-startup-id i3lock-fancy
 bindsym Mod1+Ctrl+c exec --no-startup-id code
 bindsym Mod1+Ctrl+e exec --no-startup-id thunderbird
@@ -319,9 +319,9 @@ bindsym Mod1+Ctrl+t exec --no-startup-id urxvt
 #####################################################################################################################
 
 # Set inner/outer gaps
-gaps inner 5
+gaps inner 6 
 #gaps outer 0
-#gaps top -5
+gaps top 30
 
 # Smart gaps (gaps used if only more than one container on the workspace)
 #smart_gaps on
